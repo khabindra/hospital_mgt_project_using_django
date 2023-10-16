@@ -1,0 +1,47 @@
+/* for the introduction part of home page  */
+/* Style for the Carousel */
+#carousel-slider {
+    position: relative;
+    background: #333; /* Background color for the carousel */
+}
+
+/* Style for the Carousel Caption Text */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for caption text */
+    padding: 20px;
+    text-align: left;
+}
+
+/* Style for the Carousel Caption Headings */
+.carousel-caption h2 {
+    font-size: 36px;
+    color: #fff; /* Text color for headings */
+}
+
+/* Style for the Carousel Caption Paragraphs */
+.carousel-caption p {
+    font-size: 18px;
+    color: #fff; /* Text color for paragraphs */
+}
+
+/* Style for the "See All Services" Button */
+.carousel-caption .btn {
+    background: #fff; /* Background color for the button */
+    color: #333; /* Text color for the button */
+}
+
+/* Style for Carousel Indicators */
+.carousel-indicators li {
+    background-color: #fff; /* Background color for the indicators */
+}
+
+/* Style for Carousel Control Arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #fff; /* Color for carousel control arrows */
+}
+
+/* Style for active Carousel Indicator */
+.carousel-indicators .active {
+    background-color: #333; /* Background color for the active indicator */
+}
