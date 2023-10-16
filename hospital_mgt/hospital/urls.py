@@ -8,9 +8,6 @@ urlpatterns = [
     path('contact/',Contact,name='contact'),
     path('admin_login/',Login,name='login'),
     path('logout/',Logout_admin,name='logout_admin'),
-
-
-
     
 
 ]

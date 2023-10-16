@@ -1,8 +1,14 @@
+{% load static %}
 {% include 'base.html' %}
-{% include 'navigation.html' %}
 
+{% include 'navigation.html' %}
+<style>
+    body{
+        background-color: #cccccc;
+    }
+</style>
 
 {% block content %}
-    <h1 class="text-center">Welcome to hospital management system</h1>
+    <h1 id="homepage">This is the home page </h1>
 {% endblock content %}
 {% include 'footer.html' %}
