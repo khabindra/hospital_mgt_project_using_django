@@ -18,15 +18,21 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Login
+                Login
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Admin</a></li>
-              <li><a class="dropdown-item" href="#">Doctor</a></li>
-              <li><a class="dropdown-item" href="#">Patient</a></li>
-            </ul>
-              
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'login' %}">Admin</a>
+                <a class="dropdown-item" href="#">Doctor</a>
+                <a class="dropdown-item" href="#">Patient</a>
+            </div>
+        </li>
+        
+
+          {% if request.user.is_staff  %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout_admin' %}">logout</a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </div>
