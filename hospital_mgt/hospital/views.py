@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 
-from .models import Doctor
+from .models import Doctor, Patient
 # Create your views here.
 def About(request):
     return render(request, 'about.html')
@@ -78,3 +78,41 @@ def Add_Doctor(request):
 
     d = {'error': error}
     return render(request,'add_doctor.html',d)
+
+
+
+def View_Patient(request):
+    if not request.user.is_staff:
+        return redirect('login')
+    doc = Patient.objects.all()
+    d = {'doc':doc}
+
+    return render(request,'view_patient.html',d)
+
+def Delete_Patient(request,pid):
+    if not request.user.is_staff: 
+        return redirect('login')
+    patient = Patient.objects.get(id = pid)
+    patient.delete()
+    return redirect('view_patient')
+
+    
+
+def Add_Patient(request):
+    error = ""
+    if not request.user.is_staff:
+        return redirect('login')
+    if request.method == "POST":
+        n = request.POST['name']
+        g = request.POST['gender']
+        m = request.POST['mobile']
+        a = request.POST['address']
+       
+        try:
+            Patient.objects.create(name=n,gender=g, mobile = m, address=a)
+            error = 'no'
+        except:
+            error = "yes"
+
+    d = {'error': error}
+    return render(request,'add_patient.html',d)
