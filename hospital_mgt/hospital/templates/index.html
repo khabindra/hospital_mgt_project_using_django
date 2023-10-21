@@ -1,11 +1,37 @@
 {% load static %}
 {% include 'base.html' %}
-
 {% include 'navigation.html' %}
 
 {% block content %}
-
-<h1>Admin Dashboard</h1>
-
-{% endblock content %}
+<div class="container">
+    <h1 class="text-center">Admin Dashboard</h1>
+    <br><br><br>
+    <div class="row">
+        <div class="col-sm-4 mydivstyle">
+            <a href="{% url 'view_doctor' %}">
+                <div class="dashboard-item">
+                    <h2>Doctors</h2>
+                    <p class="count">{{d}}</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4 mydivstyle">
+            <a href="{% url 'view_patient' %}">
+                <div class="dashboard-item">
+                    <h2>Patients</h2>
+                    <p class="count">{{p}}</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4 mydivstyle">
+            <a href="{% url 'view_appointment' %}">
+                <div class="dashboard-item">
+                    <h2>Appointments</h2>
+                    <p class="count">{{a}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
 {% include 'footer.html' %}

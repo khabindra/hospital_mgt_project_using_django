@@ -25,7 +25,4 @@ urlpatterns = [
     path('delete_doctor/<int:pid>/', Delete_Doctor, name='delete_doctor'),
     path('delete_patient/<int:pid>/', Delete_Patient, name='delete_patient'),
     path('delete_appointment/<int:pid>/', Delete_Appointment, name='delete_appointment'),
-
-
-
 ]
